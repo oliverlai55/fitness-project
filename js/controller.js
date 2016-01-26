@@ -2,9 +2,9 @@ angular.module('myApp', []).controller('myController', function($scope){
 
 
 	$scope.items = [
-		{id: 1, text: 'Cheese - 200g', bought: false},
-		{id: 2, text: 'Bread', bought: true},
-		{id: 3, text: 'Onions x4', bought: false}
+		{id: 1, text: 'Bench Press', bought: false},
+		{id: 2, text: 'Dumbbell Fly', bought: true},
+		{id: 3, text: 'Inclined Bench Press', bought: false}
 	];
 
 	$scope.getTotalItems = function() {
