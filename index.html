@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 	<link rel="stylesheet" href="">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+
 	<script type="text/javascript" src="js/app.js"></script>
 </head>
-<body>
-	<div class="container" ng-controller="ShopCtrl">
-	<h1>My Workout List</h1>
-		<div class="main">
-			<ul class="unstyled">
-				<li ng-repeat="item in items">
-					<input type="checkbox" id"item-{{item.id}}" ng-model="item.bought">
-					<label for="item-{{item.id}}" class="{{isBought(item.bought)}}">{{item.text}}<span></span></label>
-				</li>
-			</ul>
-			<form class="form-horizontal" ng-submit="addItem()">
-				<input type="text" ng-model="itemEntry" placeholder="Add Your Exercise">
-			</form>
-		</div>
-		<div class="footer">
-			<button class="btn btn-large btn-danger" ng-click="clearBought()">Remove List</button>
-		</div>
-	</div>
+  <body>
+  	<div class="container" ng-controller="ShopCtrl">
+  		<h1>My Workout List</h1>
+  		<div class="main">
+	  		<ul class="unstyled">
+	  			<li ng-repeat="item in items">
+	  				<input type="checkbox" id="item-{{item.id}}" ng-model="item.bought">
+	  				<label for="item-{{item.id}}" class="{{isBought(item.bought)}}">{{item.text}}<span></span></label>
+	  			</li>
+	  		</ul>
+	  		<form class="form-horizontal" ng-submit="addItem()">
+	  			<input type="text" ng-model="itemEntry" ng-model-instant placeholder="Add a new exercise">
+	  		</form>
+	  	</div>
 
+	  	<div class="footer">
+	  		<button class="btn btn-large btn-danger" ng-click="clearBought()">Remove List</button>
+	  	</div>
+  	</div>
+  </body>
 
-</body>
 </html>
