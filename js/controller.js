@@ -1,4 +1,5 @@
-function ShopCtrl($scope) {
+angular.module('myApp', []).controller('myController', function($scope){
+
 
 	$scope.items = [
 		{id: 1, text: 'Cheese - 200g', bought: false},
@@ -29,4 +30,4 @@ function ShopCtrl($scope) {
 		return text.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
 	}
 
-}
+});
