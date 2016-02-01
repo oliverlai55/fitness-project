@@ -8,28 +8,25 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-
+  
 	<script type="text/javascript" src="js/controller.js"></script>
 </head>
-  <body>
-  	<div class="container" ng-controller="myController">
-  		<h1>My Workout List</h1>
-  		<div class="main">
-	  		<ul class="unstyled">
-	  			<li ng-repeat="item in items">
-	  				<input type="checkbox" id="item-{{item.id}}" ng-model="item.bought">
-	  				<label for="item-{{item.id}}" class="{{isBought(item.bought)}}">{{item.text}}<span></span></label>
-	  			</li>
-	  		</ul>
-	  		<form class="form-horizontal" ng-submit="addItem()">
-	  			<input type="text" ng-model="itemEntry" ng-model-instant placeholder="Add a new exercise">
-	  		</form>
-	  	</div>
+  <body ng-controller>
+  <div class="container">
+  	<div class="row">
 
-	  	<div class="footer">
-	  		<button class="btn btn-large btn-danger" ng-click="clearBought()">Remove List</button>
-	  	</div>
   	</div>
+  	<div class="row">
+  		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="item in lists | filter:searchLists">
+  			<h3>{{item.name}}</h3>
+  			<h4>{{item.musclegroup}}</h4>
+  			<h4>{{item.sets}}</h4>
+  			<h4>{{item.reps}}</h4>
+  			<button class="btn btn-warning btn-sm" val='{{$index}}' ng-click="editList()">Edit</button>
+  			<button class="btn btn-danger btn-sm" val='{{$index}}' ng-click="deleteHouse()">Delete</button>
+  		</div>
+  	</div>
+  </div>
   </body>
 
 </html>
