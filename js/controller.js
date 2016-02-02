@@ -15,4 +15,19 @@ listArray.push(new List("Decline Barbell Bench Press","Chest","4","12","1 mins")
 
 $scope.lists = listArray;
 
+	$scope.open = function(){
+	$scope.showModal = true;
+	console.log("yo");
+
+	};
+
+	$scope.ok = function(){
+	$scope.showModal = false;
+	};
+
+	$scope.cancel = function(){
+	$scope.showModal = false;
+	}
 });
+
+
