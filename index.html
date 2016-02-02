@@ -19,13 +19,18 @@
   	<div class="row">
   		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="item in lists | filter:searchLists">
   			<h3>{{item.name}}</h3>
-  			<h4>{{item.musclegroup}}</h4>
+  			<h4>{{item.type}</h4>
   			<h4>{{item.sets}}</h4>
   			<h4>{{item.reps}}</h4>
+  			<h4>{{item.breaktime}}</h4>
   			<button class="btn btn-warning btn-sm" val='{{$index}}' ng-click="editList()">Edit</button>
   			<button class="btn btn-danger btn-sm" val='{{$index}}' ng-click="deleteHouse()">Delete</button>
   		</div>
   	</div>
+  </div>
+
+  <!-- Add New List Page -->
+  <div class="container">
   </div>
   </body>
 
